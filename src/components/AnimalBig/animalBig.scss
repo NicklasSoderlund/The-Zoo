@@ -1,0 +1,28 @@
+.animalBigOuterContainer {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+}
+
+.animalBigLeftContainer {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    img {
+        width: 100%;
+    }
+    h2 {
+        font-size: 2em;
+    }
+    #latin {
+        font-size: 1.5em;
+        font-style: italic;
+        margin: 0;
+    };
+}
+.animalBigRightContainer {
+    
+}
