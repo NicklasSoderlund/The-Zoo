@@ -1,0 +1,46 @@
+.animalPageContainer {
+    width: 95%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items:stretch;
+    justify-content: center;
+    row-gap: 2em;
+    gap:1em;
+    margin: auto;
+    padding: 1em 0 1em 0;
+}
+
+
+.animalContainer {
+   width: 30%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-between;
+    gap: 1em;
+    padding: 1em;
+    border:1px solid black;
+
+   img {
+    max-width: 90%;
+    max-height: 300px;
+   }
+
+   .animalSmallTextContent {
+    width: 90%;
+    text-align: center;
+    #nameContainer {
+        font-weight: 600;
+        p {
+            margin: 0 0 1% 0;
+        }
+        .latin {
+            font-weight: 400;
+            font-style: italic;
+        }
+    }
+    #smallDescription {
+        text-align: left;
+    }
+   }
+}
