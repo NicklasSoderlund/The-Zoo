@@ -1,10 +1,8 @@
-import { setSelectionRange } from "@testing-library/user-event/dist/utils";
+
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { isPropertySignature } from "typescript";
 import { Animal } from "../../models/Animal";
-import { IAnimalsProps } from "../../models/IAnimalsProps";
-import { apiCall, checkStorage, getLocalStorage, updateStorage } from "../../services/fetchAnimals";
+import { apiCall } from "../../services/fetchAnimals";
 import "./animalBig.scss"
 
 export function AnimalBig() {
@@ -31,7 +29,7 @@ export function AnimalBig() {
       }
     
     }, [])
-      
+
     console.log(animalList);
     let currentAnimal = animalList[Number(id)];
 
@@ -44,6 +42,7 @@ export function AnimalBig() {
         // localStorage.clear()
         // localStorage.setItem("animalList", JSON.stringify(animalList));
     }
+
 
     return ( 
     <section className="animalBigOuterContainer">

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Animal } from "../../models/Animal";
  import { IAnimalsProps } from "../../models/IAnimalsProps";
-import { apiCall, getLocalStorage, setStartStorage} from "../../services/fetchAnimals"
+import { apiCall} from "../../services/fetchAnimals"
 import './animals.scss';
 
 export function Animals() {
