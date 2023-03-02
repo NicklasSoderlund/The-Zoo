@@ -1,3 +1,10 @@
+.startpageContainer {
+    text-align: center;
+    h1 {
+        font-size: 2em;
+    }
+}
+
 .animalPageContainer {
     width: 95%;
     display: flex;
@@ -7,7 +14,7 @@
     row-gap: 2em;
     gap:1em;
     margin: auto;
-    padding: 1em 0 1em 0;
+    padding: 0 0 1.5em 0;
 }
 
 
@@ -19,7 +26,8 @@
    justify-content: space-between;
     gap: 1em;
     padding: 1em;
-    border:1px solid black;
+    border:1px solid #d48581;
+    background-color: #faf0f0;
 
    img {
     max-width: 90%;

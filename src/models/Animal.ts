@@ -7,7 +7,7 @@ export class Animal {
       public  longDescription: string,
       public  imageUrl: string,
        public isFed: boolean,
-       public lastFed: string) {
+       public lastFed: Date) {
         
     }
 }

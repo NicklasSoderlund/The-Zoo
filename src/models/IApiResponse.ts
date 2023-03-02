@@ -8,5 +8,5 @@ export interface IApiResponse  {
     longDescription: string,
     imageUrl: string,
     isFed: boolean,
-    lastFed: string
+    lastFed: Date;
 }

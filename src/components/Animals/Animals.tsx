@@ -1,13 +1,18 @@
 import { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { Animal } from "../../models/Animal";
- import { IAnimalsProps } from "../../models/IAnimalsProps";
 import { apiCall} from "../../services/fetchAnimals"
 import './animals.scss';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export function Animals() {
 
   const [animalList, setAnimalList] = useState<Animal[]>([])
+
+
 
   useEffect(() => {
          const createAnimals = async () => {
@@ -29,7 +34,49 @@ export function Animals() {
   
   }, [])
 
-  console.log(animalList);
+
+
+ function notification() {
+    for (let i = 0; i < animalList.length; i++) {
+      const threeHours = 10800000;
+      let mydate = animalList[i].lastFed;
+      let processedDate = new Date(mydate);
+      let feedingDate = processedDate.valueOf();
+      let currentDate = new Date().valueOf();
+
+      
+       if (currentDate - feedingDate > threeHours) {
+        // console.log(i);
+        // addNotification({
+        //   title: (animalList[i].name +  "Is Hungry!") as string,
+        //   message: "Click Here To Go Feed Her!",
+        //   duration: 10000,
+        //   native: true,
+        //   onClick: () => <Link to={"animal/" + (animalList[i].id - 1)}> </Link>
+        // });
+        
+        //     const notice = new Notification(animalList[i].name + " Is Hungry!", {
+        //     body: "Click here to go feed" + animalList[i].name
+        //   })
+        //   setTimeout(() => {
+        //     notice.close();
+        // }, 10 * 1000);
+        //   notice.addEventListener("click", () => {
+        //     <Link to={"animal/" + (animalList[i].id - 1)}> </Link>
+        //   })
+        //   console.log(notice); 
+
+        toast(animalList[i].name +  " Är Hungrig!");
+       
+       }
+
+    }
+  }
+
+  useEffect(() => {
+    notification()
+  }, [animalList])
+
 
 let html =  animalList.map((a, i) => {
   let currentId = a.id - 1;
@@ -40,8 +87,13 @@ let html =  animalList.map((a, i) => {
       <p id="smallDescription">{a.shortDescription}</p>
       <Link to={"animal/" + currentId}><button>Läs mer</button></Link>
       </div>
+      
   </div>)
 })
 
-return ( <div className="animalPageContainer">{html}</div> )
+return ( <section className="startpageContainer">
+<h1>Our Zoo Animals</h1>
+<div className="animalPageContainer">{html}</div>
+<ToastContainer autoClose={12000}></ToastContainer>
+</section> )
 }
