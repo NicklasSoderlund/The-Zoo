@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import './App.scss';
 import { Animals } from './components/Animals/Animals';
-import { Animal } from './models/Animal';
-import { apiCall } from './services/fetchAnimals';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AnimalBig } from './components/AnimalBig/AnimalBig';
 
 
 
+
 function App() {
+
 
   return (
 <BrowserRouter>
