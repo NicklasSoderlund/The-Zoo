@@ -46,25 +46,6 @@ export function Animals() {
 
       
        if (currentDate - feedingDate > threeHours) {
-        // console.log(i);
-        // addNotification({
-        //   title: (animalList[i].name +  "Is Hungry!") as string,
-        //   message: "Click Here To Go Feed Her!",
-        //   duration: 10000,
-        //   native: true,
-        //   onClick: () => <Link to={"animal/" + (animalList[i].id - 1)}> </Link>
-        // });
-        
-        //     const notice = new Notification(animalList[i].name + " Is Hungry!", {
-        //     body: "Click here to go feed" + animalList[i].name
-        //   })
-        //   setTimeout(() => {
-        //     notice.close();
-        // }, 10 * 1000);
-        //   notice.addEventListener("click", () => {
-        //     <Link to={"animal/" + (animalList[i].id - 1)}> </Link>
-        //   })
-        //   console.log(notice); 
 
         toast(animalList[i].name +  " Är Hungrig!");
        

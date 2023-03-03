@@ -97,7 +97,7 @@ export function AnimalBig() {
       <p>{JSON.stringify(lastFed)}</p>
       <button id="feedButton" onClick={handleClick}>Mata {currentAnimal.name}</button>
   </div>
-  <ToastContainer autoClose={10000}></ToastContainer>
+  <ToastContainer autoClose={5000}></ToastContainer>
   </section>
   : <div>No animal with this id.</div>
     }
