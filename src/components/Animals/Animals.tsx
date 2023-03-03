@@ -12,7 +12,7 @@ export function Animals() {
 
   const [animalList, setAnimalList] = useState<Animal[]>([])
 
-
+  const threeHours = 10800000;
 
   useEffect(() => {
          const createAnimals = async () => {
@@ -38,7 +38,6 @@ export function Animals() {
 
  function notification() {
     for (let i = 0; i < animalList.length; i++) {
-      const threeHours = 10800000;
       let mydate = animalList[i].lastFed;
       let processedDate = new Date(mydate);
       let feedingDate = processedDate.valueOf();
@@ -61,6 +60,16 @@ export function Animals() {
 
 let html =  animalList.map((a, i) => {
   let currentId = a.id - 1;
+
+  let mydate = a.lastFed;
+  let processedDate = new Date(mydate);
+  let feedingDate = processedDate.valueOf();
+  let currentDate = new Date().valueOf();
+
+  let notice = <div className="notHungry"> <span>{a.name} är mätt och belåten för tillfället :)</span> </div>;
+   if (currentDate - feedingDate > threeHours) {
+     notice = <div className="hungry"> <span>{a.name} är hungirig! Tryck på 'Läs mer' för att mata!</span> </div>
+   }
   return  (<div className="animalContainer" key={i}>
       <img src={a.imageUrl} alt="Picture of animal" />
      
@@ -68,6 +77,7 @@ let html =  animalList.map((a, i) => {
       <p id="smallDescription">{a.shortDescription}</p>
       <Link to={"animal/" + currentId}><button>Läs mer</button></Link>
       </div>
+      {notice}
       
   </div>)
 })
